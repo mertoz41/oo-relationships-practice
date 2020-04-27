@@ -22,18 +22,20 @@ class Passenger
     end 
 
     def total_distance
-     self.rides.select do |ride| 
-        sum = 0
-       ride.distance.each do |dist| 
-        sum += dist 
-       end 
-       sum 
-     end 
+    #     sum = 0
+    #  self.rides.select do |ride| 
+    #    sum += ride.distance 
+    #    end 
+    #    sum 
+      dist = self.rides.sum {|ride| ride.distance}
+    #   dist.sum 
+    
      
+    
     end 
 
     def self.premium_members
-
+    self.all.find_all { |pass| pass.total_distance >= 100}
     end 
 
     

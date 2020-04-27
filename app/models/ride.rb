@@ -15,6 +15,24 @@ class Ride
         @@all 
     end 
 
+    def passengers
+        self.passenger 
+    end 
+
+    def drivers
+        self.driver
+    end
+
+    def distances
+        self.distance 
+    end 
+
+    def self.average_distance
+      len = @@all.length 
+     rid = @@all.sum {|ride| ride.distance }
+     rid / len 
+    end 
+
 end 
 
 
